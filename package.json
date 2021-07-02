@@ -4,7 +4,7 @@
   "main": "gulpfile.js",
   "author": "Roy Barber",
   "scripts": {
-    "dev": "ENV NODE_ENV=development netlify dev",
+    "dev": "ENV NODE_ENV=development gulp build:serve --development",
     "build": "ENV NODE_ENV=production gulp build --production",
     "netlify": "gulp build --production",
     "build:serve": "ENV NODE_ENV=production gulp build:serve --production"
@@ -42,11 +42,13 @@
     "jquery-validation": "^1.19.2",
     "lozad": "^1.16.0",
     "netlify-plugin-a11y": "0.0.12",
+    "nprogress": "^0.2.0",
     "postcss": "^8.2.1",
     "postcss-import": "^14.0.0",
     "postcss-mixins": "^7.0.2",
     "postcss-preset-env": "^6.7.0",
     "postcss-pxtorem": "^5.1.1",
+    "qs": "^6.10.1",
     "tailwindcss": "^2.0.2",
     "webpack": "^4.41.2",
     "webpack-stream": "^5.2.1",

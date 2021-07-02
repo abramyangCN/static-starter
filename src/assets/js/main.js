@@ -1,41 +1,26 @@
 import $ from "jquery";
+import qs from 'qs';
+import nprogress from 'nprogress';
 
 // Setup
 window.jQuery = window.$ = $;
 
-// NO JS Fallbacks
-$('body').addClass("js");
+
+const qsRes = qs.parse(location.search, {ignoreQueryPrefix: true})
+
+const clientName = qsRes['clientName'] || "客户";
+
+
+$('#clientName').text(clientName)
 
 // Environmental
 if(process.env.NODE_ENV === 'development'){
 	require("./devonly/dev");
 }
 
-// Request to the test endpoints
-$.ajax({
-	type: 'GET',
-	url: '/api/hello',
-	dataType: 'json',
-	error: function(error) {
-		console.error('An error has occurred', error)
-	},
-	success: function(response) {
-		console.log(response);
-	}
-});
-$.ajax({
-	type: 'GET',
-	url: '/api/name?name=Beth',
-	dataType: 'json',
-	error: function(error) {
-		console.error('An error has occurred', error)
-	},
-	success: function(data) {
-		console.log(data)
-	},
-});
-
 // Components & Modules
 require("./modules/lazyload");
 require("./modules/validation");
 require("./modules/mobilemenu");
+
+
