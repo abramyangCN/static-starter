@@ -15309,10 +15309,12 @@ nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.configure({
 });
 
 window.onload = function () {
-  nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.done();
   setTimeout(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("#loading").fadeOut(500);
-  }, 500);
+    nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.done();
+    setTimeout(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#loading").fadeOut(500);
+    }, 500);
+  }, 1000);
 };
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
