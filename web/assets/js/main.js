@@ -15300,14 +15300,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_2__);
 
 
- // Setup
+
+nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.configure({
+  easing: "ease",
+  speed: 500,
+  parent: "#loadingBar",
+  showSpinner: false
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load", function () {
+  nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.done();
+  setTimeout(function () {
+    return jquery__WEBPACK_IMPORTED_MODULE_0___default()("#loading").fadeOut(500);
+  }, 500);
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.start();
+}); // Setup
 
 window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 var qsRes = qs__WEBPACK_IMPORTED_MODULE_1___default.a.parse(location.search, {
   ignoreQueryPrefix: true
 });
-var clientName = qsRes['clientName'] || "客户";
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('#clientName').text(clientName); // Environmental
+var clientName = qsRes["clientName"] || "客户";
+jquery__WEBPACK_IMPORTED_MODULE_0___default()("#clientName").text(clientName); // Environmental
 
 if (true) {
   __webpack_require__(/*! ./devonly/dev */ "./src/assets/js/devonly/dev.js");

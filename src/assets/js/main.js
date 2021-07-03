@@ -1,20 +1,33 @@
 import $ from "jquery";
-import qs from 'qs';
-import nprogress from 'nprogress';
+import qs from "qs";
+import NProgress from "nprogress";
+
+NProgress.configure({
+	easing: "ease",
+	speed: 500,
+	parent: "#loadingBar",
+	showSpinner: false,
+});
+$(window).on("load", () => {
+	NProgress.done();
+	setTimeout(()=>$("#loading").fadeOut(500), 500);
+});
+
+$(document).ready(() => {
+	NProgress.start();
+});
 
 // Setup
 window.jQuery = window.$ = $;
 
+const qsRes = qs.parse(location.search, { ignoreQueryPrefix: true });
 
-const qsRes = qs.parse(location.search, {ignoreQueryPrefix: true})
+const clientName = qsRes["clientName"] || "客户";
 
-const clientName = qsRes['clientName'] || "客户";
-
-
-$('#clientName').text(clientName)
+$("#clientName").text(clientName);
 
 // Environmental
-if(process.env.NODE_ENV === 'development'){
+if (process.env.NODE_ENV === "development") {
 	require("./devonly/dev");
 }
 
@@ -22,5 +35,3 @@ if(process.env.NODE_ENV === 'development'){
 require("./modules/lazyload");
 require("./modules/validation");
 require("./modules/mobilemenu");
-
-

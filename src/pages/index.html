@@ -1,5 +1,14 @@
 {{#extend "default" pageTitle=""}}{{#content "body"}}
 
+<div class="fixed z-50 w-full h-full bg-white" id="loading">
+	<div class="flex w-full h-full flex-col items-center justify-center">
+		<div class="w-1/2">
+			<img src="assets/img/corplogo.jpg" alt="">
+		</div>
+		<div class="w-1/2 mt-6 h-2" id="loadingBar"></div>
+	</div>
+</div>
+
 <div class="relative" id="content">
 	<main class="w-full pb-10">
 		<div>
