@@ -10,12 +10,10 @@ NProgress.configure({
 });
 
 window.onload = () => {
+	NProgress.done();
 	setTimeout(() => {
-		NProgress.done();
-		setTimeout(() => {
-			$("#loading").fadeOut(500);
-		}, 500);
-	}, 1000);
+		$("#loading").fadeOut(500);
+	}, 500);
 };
 
 $(document).ready(() => {
