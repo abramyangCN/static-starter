@@ -8,10 +8,13 @@ NProgress.configure({
 	parent: "#loadingBar",
 	showSpinner: false,
 });
-$(window).on("load", () => {
+
+window.onload = () => {
 	NProgress.done();
-	setTimeout(()=>{$("#loading").fadeOut(500)}, 1000);
-});
+	setTimeout(() => {
+		$("#loading").fadeOut(500);
+	}, 500);
+};
 
 $(document).ready(() => {
 	NProgress.start();

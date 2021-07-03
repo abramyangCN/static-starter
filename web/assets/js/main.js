@@ -15307,12 +15307,14 @@ nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.configure({
   parent: "#loadingBar",
   showSpinner: false
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load", function () {
+
+window.onload = function () {
   nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.done();
   setTimeout(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("#loading").fadeOut(500);
-  }, 1000);
-});
+  }, 500);
+};
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   nprogress__WEBPACK_IMPORTED_MODULE_2___default.a.start();
 }); // Setup
