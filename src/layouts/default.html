@@ -14,8 +14,6 @@
 
 		<link rel="stylesheet" type="text/css" href="/assets/css/main.css"/>
 
-
-
 		<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 		<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-touch-icon.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-touch-icon.png">
@@ -25,23 +23,25 @@
 		<!-- Schema.org markup for Google+ -->
 		<meta itemprop="name" content="{{#if pageTitle}}{{pageTitle}}{{else}}{{ global.pageTitle }}{{/if}}">
 		<meta itemprop="description" content="{{#if pageDescription}}{{pageDescription}}{{else}}{{ global.pageDescription }}{{/if}}">
-		<meta itemprop="image" content="/share.png">
+		<meta itemprop="image" content="/assets/img/share.jpg">
+
+		<meta property="wximg" content="/assets/img/share.jpg">
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@{{global.twitter}}">
 		<meta name="twitter:title" content="{{#if pageTitle}}{{pageTitle}}{{else}}{{ global.pageTitle }}{{/if}}">
 		<meta name="twitter:description" content="{{#if pageDescription}}{{pageDescription}}{{else}}{{ global.pageDescription }}{{/if}}">
-		<meta name="twitter:image:src" content="/share.png">
+		<meta name="twitter:image:src" content="/assets/img/share.jpg">
 
 		<!-- Open Graph data -->
 		<meta property="og:title" content="{{#if pageTitle}}{{pageTitle}}{{else}}{{ global.pageTitle }}{{/if}}"/>
 		<meta property="og:url" content=""/>
-		<meta property="og:image" content="/share.png"/>
-		<meta property="og:image:url" content="/share.png"/>
+		<meta property="og:image" content="/assets/img/share.jpg"/>
+		<meta property="og:image:url" content="/assets/img/share.jpg"/>
 		<meta property="og:description" content="{{#if pageDescription}}{{pageDescription}}{{else}}{{ global.pageDescription }}{{/if}}"/>
 		<meta property="og:site_name" content="{{global.siteName}}"/>
-
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 	</head>
 
 

@@ -1,6 +1,7 @@
 import $ from "jquery";
 import qs from "qs";
 import NProgress from "nprogress";
+import { setWechatConfig } from "./wechatJSSDK";
 
 NProgress.configure({
 	easing: "ease",
@@ -21,6 +22,17 @@ window.onload = () => {
 $(document).ready(() => {
 	NProgress.start();
 });
+
+const shareData = {
+	title: $("title").html(),
+	desc: $("meta[name=description]").attr("content"),
+	img: $("meta[property=wximg]").attr("content"),
+	link: window.location.href.split("#")[0],
+};
+
+console.log(shareData)
+
+setWechatConfig(shareData);
 
 // Setup
 window.jQuery = window.$ = $;
